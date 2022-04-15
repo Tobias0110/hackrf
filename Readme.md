@@ -1,3 +1,6 @@
+# Changes
+This firmware for the HackRF is changed so that the CLK-OUTPUT frequency is 28.8MHz instead of 10MHz. CLK-INPUT frequency is still 10MHz. I need this to sync a RTL-SDR with the HackRF. Furthermore, the CLK-OUTPUT is automatically enabled after power on of the HackRF (with the original firmware, an enable command is needed).
+
 # HackRF
 
 This repository contains hardware designs and software for HackRF,

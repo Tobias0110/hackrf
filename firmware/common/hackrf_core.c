@@ -725,6 +725,7 @@ void cpu_clock_init(void)
 	// CCU2_CLK_APLL_CFG = 0;
 	// CCU2_CLK_SDIO_CFG = 0;
 #endif
+si5351c_clkout_enable(&clock_gen, 1);
 }
 
 clock_source_t activate_best_clock_source(void)

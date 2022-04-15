@@ -260,11 +260,12 @@ void si5351c_clkout_enable(si5351c_driver_t* const drv, uint8_t enable)
 		output_enable = output_enable | SI5351C_CLK_ENABLE(3);
 	else
 		output_enable = output_enable | SI5351C_CLK_DISABLE(3);
+	
 	uint8_t oe_data[] = {SI5351C_REG_OUTPUT_EN, output_enable};
 	si5351c_write(drv, oe_data, 2);
 
-	/* Configure clock to 10MHz (TODO customisable?) */
-	si5351c_configure_multisynth(drv, 3, 80*128-512, 0, 1, 0);
+	/* Configure clock to 28.8MHz for RTL-SDR sync */
+	si5351c_configure_multisynth(drv, 3, 3043, 5, 9, 0);
 
 	/* Set power up/doen in CLK3 control register*/
 	uint8_t pll;
